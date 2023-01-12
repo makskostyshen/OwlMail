@@ -1,7 +1,7 @@
 package com.example.owlmail.controllers;
 
-import com.example.owlmail.model.magician.Magician;
-import com.example.owlmail.model.magician.MagicianService;
+import com.example.owlmail.model.wizard.Wizard;
+import com.example.owlmail.model.wizard.WizardService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -13,16 +13,16 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class MagicianController {
 
-  private final MagicianService magicianService;
+  private final WizardService wizardService;
 
   @Autowired
-  public MagicianController(MagicianService magicianService) {
-    this.magicianService = magicianService;
+  public MagicianController(WizardService wizardService) {
+    this.wizardService = wizardService;
   }
 
   @GetMapping(value = "/magician/{id}")
-  public Magician getMagician(@PathVariable Long id) {
-    return magicianService.findById(id);
+  public Wizard getMagician(@PathVariable Long id) {
+    return wizardService.findById(id);
   }
 
 }

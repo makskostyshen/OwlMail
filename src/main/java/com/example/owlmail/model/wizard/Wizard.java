@@ -1,4 +1,4 @@
-package com.example.owlmail.model.magician;
+package com.example.owlmail.model.wizard;
 
 
 import jakarta.persistence.Entity;
@@ -18,7 +18,7 @@ import lombok.Setter;
 @AllArgsConstructor
 @Getter
 @Setter
-public class Magician {
+public class Wizard {
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long id;

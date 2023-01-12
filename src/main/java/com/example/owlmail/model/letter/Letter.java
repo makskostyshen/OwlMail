@@ -1,6 +1,6 @@
 package com.example.owlmail.model.letter;
 
-import com.example.owlmail.model.magician.Magician;
+import com.example.owlmail.model.wizard.Wizard;
 import com.example.owlmail.model.owl.Owl;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -26,7 +26,7 @@ public class Letter {
   private String message;
 
   @ManyToOne
-  private Magician addressee;
+  private Wizard addressee;
 
   @ManyToOne
   private Owl owl;

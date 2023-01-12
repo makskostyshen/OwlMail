@@ -1,6 +1,6 @@
 package com.example.owlmail.model.owl;
 
-import com.example.owlmail.model.magician.Magician;
+import com.example.owlmail.model.wizard.Wizard;
 import com.example.owlmail.model.owl.components.OwlBreed;
 import com.example.owlmail.model.owl.components.OwlColor;
 import com.example.owlmail.model.owl.components.OwlId;
@@ -37,6 +37,6 @@ public class Owl {
 
   @ManyToOne
   @JoinColumn(name = "magician_id")
-  private Magician magician;
+  private Wizard wizard;
 
 }
