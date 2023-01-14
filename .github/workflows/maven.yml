@@ -22,15 +22,18 @@ jobs:
         java-version: '17'
         distribution: 'temurin'
         cache: maven
+        
+    - name: Change wrapper permissions
+      run: chmod +x ./mvnw
     - name: Build with Maven
       run: |
-        mvn --batch-mode --update-snapshots package
+        ./mvnw -B package --file pom.xml
     
     - name: Add coverage to PR
       id: jacoco
       uses: madrapps/jacoco-report@v1.3
       with:
-        paths: ${{ github.workspace }}/intellistart-java-2022-dreamteam/target/site/jacoco/jacoco.xml
+        paths: ${{ github.workspace }}/target/site/jacoco/jacoco.xml
         token: ${{ secrets.OWL_REPO_COMMIT_TOKEN }}
         min-coverage-overall: 10
         min-coverage-changed-files: 10
