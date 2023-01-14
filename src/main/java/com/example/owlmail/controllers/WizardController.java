@@ -11,12 +11,12 @@ import org.springframework.web.bind.annotation.RestController;
  * Controller class.
  */
 @RestController
-public class MagicianController {
+public class WizardController {
 
   private final WizardService wizardService;
 
   @Autowired
-  public MagicianController(WizardService wizardService) {
+  public WizardController(WizardService wizardService) {
     this.wizardService = wizardService;
   }
 

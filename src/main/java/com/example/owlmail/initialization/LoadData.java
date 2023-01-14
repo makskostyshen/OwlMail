@@ -39,7 +39,7 @@ public class LoadData {
     Wizard wizardKostyshen = new Wizard(null, "Maks", "Kostyshen");
     Wizard wizardSara = new Wizard(null, "Art", "Sara");
 
-    Owl owlKostyshen = new Owl("Gedviga", OwlBreed.BASIC, OwlColor.GRAY, wizardKostyshen);
+    Owl owlKostyshen = new Owl(null, "Gedviga", OwlBreed.BASIC, OwlColor.GRAY, wizardKostyshen);
     Letter letterToSaraFromKostyshen =
         new Letter(null, "Attention!!", "I want to kiss you", wizardSara,
                                       owlKostyshen);
