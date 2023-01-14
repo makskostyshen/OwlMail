@@ -1,8 +1,8 @@
 package com.example.owlmail.model.owl;
 
-import com.example.owlmail.model.wizard.Wizard;
 import com.example.owlmail.model.owl.components.OwlBreed;
 import com.example.owlmail.model.owl.components.OwlColor;
+import com.example.owlmail.model.wizard.Wizard;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
@@ -17,6 +17,9 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
+/**
+ * Owl entity.
+ */
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor

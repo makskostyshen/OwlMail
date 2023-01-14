@@ -1,7 +1,7 @@
 package com.example.owlmail.model.letter;
 
-import com.example.owlmail.model.wizard.Wizard;
 import com.example.owlmail.model.owl.Owl;
+import com.example.owlmail.model.wizard.Wizard;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -12,6 +12,9 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+/**
+ * Letter entity.
+ */
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor

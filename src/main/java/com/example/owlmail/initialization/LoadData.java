@@ -2,12 +2,12 @@ package com.example.owlmail.initialization;
 
 import com.example.owlmail.model.letter.Letter;
 import com.example.owlmail.model.letter.LetterRepository;
-import com.example.owlmail.model.wizard.Wizard;
-import com.example.owlmail.model.wizard.WizardRepository;
 import com.example.owlmail.model.owl.Owl;
 import com.example.owlmail.model.owl.OwlRepository;
 import com.example.owlmail.model.owl.components.OwlBreed;
 import com.example.owlmail.model.owl.components.OwlColor;
+import com.example.owlmail.model.wizard.Wizard;
+import com.example.owlmail.model.wizard.WizardRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
@@ -23,6 +23,9 @@ public class LoadData {
   private final OwlRepository owlRepository;
   private final LetterRepository letterRepository;
 
+  /**
+   * Standart constructor.
+   */
   @Autowired
   public LoadData(WizardRepository wizardRepository, OwlRepository owlRepository,
       LetterRepository letterRepository) {

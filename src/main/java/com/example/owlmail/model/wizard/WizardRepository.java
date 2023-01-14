@@ -4,7 +4,7 @@ import java.util.Optional;
 import org.springframework.data.repository.CrudRepository;
 
 /**
- * Magician Repository class.
+ * Repository class.
  */
 public interface WizardRepository extends CrudRepository<Wizard, Long> {
 
