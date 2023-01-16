@@ -1,5 +1,8 @@
 package com.example.owlmail.model.owl;
 
+import com.example.owlmail.model.owl.parts.OwlBreed;
+import com.example.owlmail.model.owl.parts.OwlColor;
+import com.example.owlmail.model.owl.parts.OwlId;
 import org.springframework.stereotype.Service;
 
 /**
@@ -14,14 +17,18 @@ public class OwlService {
   }
 
   /**
-   * Find owl by id in repository.
+   * Find owl by OwlId in repository.
    *
    * @return Owl if existing
    * @throws OwlNotFoundException if not existing.
    */
-  public Owl findById(Long id) {
+  public Owl findByOwlId(OwlId owlId) {
+    String name = owlId.getName();
+    OwlBreed breed = owlId.getBreed();
+    OwlColor color = owlId.getColor();
+
     return owlRepository
-        .findById(id)
+        .findByNameAndBreedAndColor(name, breed, color)
         .orElseThrow(OwlNotFoundException::new);
   }
 }

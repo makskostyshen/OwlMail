@@ -1,4 +1,4 @@
-package com.example.owlmail.model.owl.components;
+package com.example.owlmail.model.owl.parts;
 
 /**
  * Owls' color names enumeration.

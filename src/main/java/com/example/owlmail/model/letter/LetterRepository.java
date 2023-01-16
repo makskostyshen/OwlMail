@@ -1,5 +1,6 @@
 package com.example.owlmail.model.letter;
 
+import java.util.Optional;
 import org.springframework.data.repository.CrudRepository;
 
 /**
@@ -7,4 +8,5 @@ import org.springframework.data.repository.CrudRepository;
  */
 public interface LetterRepository extends CrudRepository<Letter, Long> {
 
+  Optional<Letter> findById(Long id);
 }
