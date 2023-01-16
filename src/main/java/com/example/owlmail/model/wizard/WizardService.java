@@ -1,5 +1,6 @@
 package com.example.owlmail.model.wizard;
 
+import com.example.owlmail.model.wizard.parts.WizardId;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -16,7 +17,18 @@ public class WizardService {
     this.wizardRepository = wizardRepository;
   }
 
-  public Wizard findById(Long id) {
-    return wizardRepository.findMagicianById(id).orElseThrow(WizardNotFoundException::new);
+  /**
+   * Find wizard by WizardId in repository.
+   *
+   * @return Wizard if existing
+   * @throws WizardNotFoundException if not existing.
+   */
+  public Wizard findByWizardId(WizardId wizardId) {
+    String firstName = wizardId.getFirstName();
+    String familyName = wizardId.getFamilyName();
+
+    return wizardRepository
+        .findByFirstNameAndFamilyName(firstName, familyName)
+        .orElseThrow(WizardNotFoundException::new);
   }
 }
