@@ -3,9 +3,8 @@ package com.example.owlmail.initialization;
 import com.example.owlmail.model.letter.Letter;
 import com.example.owlmail.model.letter.LetterRepository;
 import com.example.owlmail.model.owl.Owl;
+import com.example.owlmail.model.owl.OwlBreed;
 import com.example.owlmail.model.owl.OwlRepository;
-import com.example.owlmail.model.owl.parts.OwlBreed;
-import com.example.owlmail.model.owl.parts.OwlColor;
 import com.example.owlmail.model.wizard.Wizard;
 import com.example.owlmail.model.wizard.WizardRepository;
 import java.time.LocalDate;
@@ -48,7 +47,7 @@ public class LoadData {
         LocalDate.of(2023, 1, 10));
 
     Owl owlKostyshen =
-        new Owl("Gedviga", OwlBreed.BASIC, OwlColor.GRAY,
+        new Owl(null, "Gedviga", OwlBreed.BARRED_OWL,
             LocalDate.of(2022, 12, 31),
             LocalDate.of(2017, 4, 6),
             wizardKostyshen);

@@ -1,8 +1,8 @@
 package com.example.owlmail.controllers;
 
 import com.example.owlmail.model.wizard.Wizard;
+import com.example.owlmail.model.wizard.WizardId;
 import com.example.owlmail.model.wizard.WizardService;
-import com.example.owlmail.model.wizard.parts.WizardId;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestBody;

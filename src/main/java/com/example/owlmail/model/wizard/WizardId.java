@@ -1,4 +1,4 @@
-package com.example.owlmail.model.wizard.parts;
+package com.example.owlmail.model.wizard;
 
 import java.io.Serializable;
 import lombok.Getter;

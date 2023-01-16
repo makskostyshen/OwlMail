@@ -1,7 +1,6 @@
 package com.example.owlmail.model.wizard;
 
 
-import com.example.owlmail.model.wizard.parts.WizardId;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.IdClass;
