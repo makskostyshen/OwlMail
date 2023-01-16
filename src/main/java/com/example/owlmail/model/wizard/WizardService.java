@@ -1,6 +1,5 @@
 package com.example.owlmail.model.wizard;
 
-import com.example.owlmail.model.wizard.parts.WizardId;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
