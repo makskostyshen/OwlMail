@@ -9,6 +9,8 @@ import com.example.owlmail.model.owl.parts.OwlColor;
 import com.example.owlmail.model.wizard.Wizard;
 import com.example.owlmail.model.wizard.WizardRepository;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
@@ -25,7 +27,7 @@ public class LoadData {
   private final LetterRepository letterRepository;
 
   /**
-   * Standart constructor.
+   * Constructor.
    */
   @Autowired
   public LoadData(WizardRepository wizardRepository, OwlRepository owlRepository,
@@ -52,8 +54,12 @@ public class LoadData {
             wizardKostyshen);
 
     Letter letterToSaraFromKostyshen =
-        new Letter(null, "Attention!!", "I want to kiss you", wizardSara,
-                                      owlKostyshen);
+        new Letter(null, "Attention!!", "I want to kiss you",
+            LocalDateTime.of(
+                LocalDate.of(2023, 1, 16),
+                LocalTime.of(11, 45)),
+            wizardKostyshen, owlKostyshen, wizardSara);
+
     return args -> {
       wizardRepository.save(wizardKostyshen);
       wizardRepository.save(wizardSara);

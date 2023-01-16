@@ -7,6 +7,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.ManyToOne;
+import java.time.LocalDateTime;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -26,12 +27,15 @@ public class Letter {
   private Long id;
 
   private String header;
-  private String message;
+  private String body;
+  private LocalDateTime dateTime;
 
   @ManyToOne
-  private Wizard addressee;
+  private Wizard sender;
 
   @ManyToOne
   private Owl owl;
 
+  @ManyToOne
+  private Wizard receiver;
 }
