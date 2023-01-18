@@ -2,6 +2,8 @@ package com.example.owlmail.model.owl;
 
 import com.example.owlmail.model.wizard.Wizard;
 import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -30,6 +32,7 @@ public class Owl {
   private Long id;
 
   private String name;
+  @Enumerated(EnumType.STRING)
   private OwlBreed breed;
 
   private LocalDate ownershipStartDate;

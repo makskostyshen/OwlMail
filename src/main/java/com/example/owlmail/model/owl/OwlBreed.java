@@ -3,6 +3,7 @@ package com.example.owlmail.model.owl;
 /**
  * Owls' breed names enumeration.
  */
+
 public enum OwlBreed {
   BARN_OWL,
   BARRED_OWL,
