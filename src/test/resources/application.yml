@@ -1,0 +1,10 @@
+spring:
+  datasource:
+    url: "jdbc:h2:mem:owlmailtest"
+    driverClassName: "org.h2.Driver"
+    username: ${DATABASE_USERNAME}
+    password: ${DATABASE_USERNAME}
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+  h2:
+    console.enabled: true
