@@ -2,7 +2,7 @@ INSERT INTO wizard VALUES ('Kostyshen', 'Maksym', '2023-01-01');
 INSERT INTO wizard VALUES ('Malfoy', 'Draco', '2023-01-01');
 
 INSERT INTO owl
-    (name, breed, date_of_birth, ownership_start_date, wizard_family_name, wizard_first_name)
+    (name, breed, date_of_birth, ownership_start_date, owner_family_name, owner_first_name)
 VALUES ('Hedwig', 'SNOWY_OWL', '2003-11-01', '2022-12-29', 'Kostyshen', 'Maksym');
 
 INSERT INTO letter
