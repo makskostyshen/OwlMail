@@ -25,4 +25,8 @@ public class Wizard {
   @Id
   private String familyName;
   private LocalDate registrationDate;
+
+  public WizardId getWizardId() {
+    return new WizardId(firstName, familyName);
+  }
 }

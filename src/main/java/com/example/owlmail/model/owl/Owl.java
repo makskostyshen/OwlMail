@@ -18,8 +18,6 @@ import lombok.Setter;
  * Owl entity.
  */
 
-
-
 @Entity
 @Getter
 @Setter
@@ -39,5 +37,5 @@ public class Owl {
   private LocalDate dateOfBirth;
 
   @ManyToOne
-  private Wizard wizard;
+  private Wizard owner;
 }

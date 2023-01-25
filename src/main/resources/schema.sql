@@ -16,9 +16,9 @@ CREATE TABLE owl (
     breed VARCHAR(255),
     date_of_birth DATE,
     ownership_start_date DATE,
-    wizard_family_name VARCHAR(255),
-    wizard_first_name VARCHAR(255),
-    FOREIGN KEY (wizard_family_name, wizard_first_name)
+    owner_family_name VARCHAR(255),
+    owner_first_name VARCHAR(255),
+    FOREIGN KEY (owner_family_name, owner_first_name)
         REFERENCES wizard (family_name, first_name)
 );
 
