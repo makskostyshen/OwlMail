@@ -7,6 +7,9 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+/**
+ * LetterDto class.
+ */
 @Setter
 @Getter
 @NoArgsConstructor
@@ -21,6 +24,9 @@ public class LetterDto {
   private Long owlId;
   private WizardId receiver;
 
+  /**
+   * Constructor of LetterDto from Letter.
+   */
   public LetterDto(Letter letter) {
     id = letter.getId();
     header = letter.getHeader();

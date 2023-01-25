@@ -26,7 +26,7 @@ public class Wizard {
   private String familyName;
   private LocalDate registrationDate;
 
-  public WizardId getWizardId(){
+  public WizardId getWizardId() {
     return new WizardId(firstName, familyName);
   }
 }

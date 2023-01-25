@@ -1,8 +1,8 @@
 package com.example.owlmail.controllers;
 
 import com.example.owlmail.model.letter.Letter;
+import com.example.owlmail.model.letter.LetterDtoValidator;
 import com.example.owlmail.model.letter.LetterService;
-import com.example.owlmail.model.letter.LetterValidator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -19,13 +19,13 @@ import org.springframework.web.bind.annotation.RestController;
 public class LetterController {
 
   private final LetterService letterService;
-  private final LetterValidator letterValidator;
+  private final LetterDtoValidator letterDtoValidator;
 
 
   @Autowired
-  public LetterController(LetterService letterService, LetterValidator letterValidator) {
+  public LetterController(LetterService letterService, LetterDtoValidator letterDtoValidator) {
     this.letterService = letterService;
-    this.letterValidator = letterValidator;
+    this.letterDtoValidator = letterDtoValidator;
   }
 
   @GetMapping(value = "/{id}")
@@ -33,9 +33,14 @@ public class LetterController {
     return letterService.findById(id);
   }
 
+  /**
+   * Method for creating letter.
+   *
+   * @return LetterDto of saved letter in database.
+   */
   @PostMapping
-  public LetterDto createLetter(@RequestBody LetterDto letterDto){
-    letterValidator.validate(letterDto);
+  public LetterDto createLetter(@RequestBody LetterDto letterDto) {
+    letterDtoValidator.validate(letterDto);
     Letter letter = letterService.createLetter(letterDto);
     return new LetterDto(letter);
   }

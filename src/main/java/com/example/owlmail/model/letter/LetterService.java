@@ -19,6 +19,9 @@ public class LetterService {
   private final WizardService wizardService;
   private final LetterRepository letterRepository;
 
+  /**
+   * Constructor.
+   */
   @Autowired
   public LetterService(OwlService owlService,
       WizardService wizardService, LetterRepository letterRepository) {
@@ -31,18 +34,28 @@ public class LetterService {
     return letterRepository.findById(id).orElseThrow(LetterNotFoundException::new);
   }
 
+  /**
+   * Create Letter by given LetterDto.
+   *      Make sure sender, receiver, owl fields exist.
+   *      Populate fields from LetterDto.
+   *
+   * @param letterDto validated with LetterDtoValidator.
+   * @return letter saved in database.
+   */
   public Letter createLetter(LetterDto letterDto) {
     Wizard sender = wizardService.findByWizardId(letterDto.getSender());
     Wizard receiver = wizardService.findByWizardId(letterDto.getReceiver());
     Owl owl = owlService.findById(letterDto.getOwlId());
 
     Letter letter = new Letter();
-    letter.setDateTime(LocalDateTime.now());
-    letter.setHeader(letterDto.getHeader());
-    letter.setBody(letterDto.getBody());
     letter.setOwl(owl);
     letter.setSender(sender);
     letter.setReceiver(receiver);
+
+    letter.setDateTime(LocalDateTime.now());
+    letter.setHeader(letterDto.getHeader());
+    letter.setBody(letterDto.getBody());
+
 
     return letterRepository.save(letter);
   }
