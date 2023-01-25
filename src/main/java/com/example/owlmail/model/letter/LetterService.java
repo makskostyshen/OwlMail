@@ -6,6 +6,7 @@ import com.example.owlmail.model.owl.Owl;
 import com.example.owlmail.model.owl.OwlService;
 import com.example.owlmail.model.wizard.Wizard;
 import com.example.owlmail.model.wizard.WizardService;
+import java.time.LocalDateTime;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -36,6 +37,7 @@ public class LetterService {
     Owl owl = owlService.findById(letterDto.getOwlId());
 
     Letter letter = new Letter();
+    letter.setDateTime(LocalDateTime.now());
     letter.setHeader(letterDto.getHeader());
     letter.setBody(letterDto.getBody());
     letter.setOwl(owl);
